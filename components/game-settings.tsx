@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
-import { X } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { IconSelector } from "@/components/icon-selector";
 import { DEFAULT_NAMES, displayName } from "@/lib/icons";
 import type { Player, PlayerId } from "@/types/game";
@@ -115,6 +115,17 @@ export function GameSettings({
               </section>
             );
           })}
+        </div>
+
+        <div className="mt-6 flex justify-end border-t border-line pt-5">
+          <button
+            type="button"
+            onClick={onClose}
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-ice px-6 font-semibold text-[#080B16] transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
+          >
+            <Check className="size-4" aria-hidden="true" />
+            Done
+          </button>
         </div>
       </div>
     </div>
