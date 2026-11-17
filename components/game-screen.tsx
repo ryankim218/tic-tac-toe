@@ -10,6 +10,8 @@ import { PlayerCard } from "@/components/player-card";
 import { Scoreboard } from "@/components/scoreboard";
 import { useGame } from "@/hooks/use-game";
 import type { Player, PlayerId } from "@/types/game";
+import Image from "next/image";
+import logo from "../app/icon.png";
 
 function phaseFor(
   player: Player,
@@ -59,7 +61,13 @@ export function GameScreen() {
             className="grid size-12 place-items-center rounded-2xl border border-line bg-card text-2xl"
             aria-hidden="true"
           >
-            ⚔️
+            <Image
+              src={logo}
+              alt=""
+              width={48}
+              height={48}
+              className="object-contain rounded-2xl"
+            />
           </span>
           <div>
             <h1 className="font-display text-2xl tracking-wide text-ink sm:text-3xl">
