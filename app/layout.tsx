@@ -26,6 +26,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-background font-sans text-ink">
         {children}
+
+        <footer className="py-4 text-center text-xs text-white/70">
+          © 2026 Ryan Kim M. All rights reserved.{" "}
+          <a
+            href="https://github.com/ryankim218"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ice hover:underline"
+          >
+            GitHub
+          </a>
+        </footer>
       </body>
     </html>
   );
