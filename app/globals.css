@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080b16;
+  --surface: #101729;
+  --card: #141e32;
+  --line: #25324a;
+  --ink: #f5f7ff;
+  --muted: #929db4;
+  --fire: #ff8a3d;
+  --ice: #55c7ff;
+  --success: #4ade80;
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-fire: var(--fire);
+  --color-ice: var(--ice);
+  --color-success: var(--success);
+  --font-sans: var(--font-outfit), "Segoe UI", sans-serif;
+  --font-display: var(--font-cinzel), Georgia, serif;
+  --animate-place: place-mark 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --animate-win: win-glow 1.15s ease-in-out infinite;
+  --animate-rise: rise-in 220ms ease-out;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes place-mark {
+    0% {
+      transform: scale(0.55);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes win-glow {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+
+  @keyframes rise-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(900px 420px at 0% -10%, rgba(255, 138, 61, 0.08), transparent 55%),
+    radial-gradient(800px 420px at 100% 0%, rgba(85, 199, 255, 0.08), transparent 50%),
+    var(--background);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(85, 199, 255, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
